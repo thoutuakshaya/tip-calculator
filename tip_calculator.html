@@ -1,0 +1,56 @@
+<!-- Level 1 — This week
+A personal tip calc ulator.
+ User types a bill amount,
+  selects tip %, clicks calculate,
+   sees the total. Teaches you inputs,
+    getting values from 
+fields, basic math in JS. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <style>
+        body{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin:0;
+            gap:40px;
+            background-color: #f0e6f6; /* Light lavender background for a festive feel */
+        }
+        #type, select,#btn,p{
+            font-size: 40px;
+            
+        }
+    </style>
+</head>
+<body>
+    <input id="type" type="number" placeholder="Enter bill amount">
+    <select id="dropdown" label="tip">
+        <option value="" selected disabled >Tip %</option>
+        <option value="5">5%</option>
+        <option value="10">10%</option>
+        <option value="15">15%</option>
+        <option value="20">20%</option>
+    </select>
+    <button id="btn">Calculate</button>
+    <p id="result"></p>
+    <script>
+        
+        
+        document.getElementById("btn").addEventListener("click",function(){
+            var input=document.getElementById("type").value
+            var tip=document.getElementById("dropdown").value
+            var total=parseFloat(input)+Number(input*tip/100)//or we can also do parseInt(input)
+            document.getElementById("result").innerText="total: ₹"+total
+
+        })
+
+    </script>
+</body>
+</html>
